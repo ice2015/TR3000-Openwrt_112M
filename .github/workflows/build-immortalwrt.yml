@@ -26,7 +26,8 @@ on:
         type: boolean
 
 env:
-  REPO_URL: https://github.com/immortalwrt/immortalwrt
+  #REPO_URL: https://github.com/immortalwrt/immortalwrt
+  REPO_URL: https://github.com/yho2ds/immortalwrt-tr3000-112m
   REPO_BRANCH: openwrt-24.10
   BRANCH_NAME: ImmortalWrt
   FEEDS_CONF: feeds.conf.default
