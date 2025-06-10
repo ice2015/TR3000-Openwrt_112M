@@ -1,0 +1,139 @@
+#!/bin/bash
+cd openwrt
+cat >> .config <<EOF
+CONFIG_TARGET_mediatek=y
+CONFIG_TARGET_mediatek_filogic=y
+CONFIG_TARGET_mediatek_filogic_DEVICE_cudy_tr3000-v1=y
+CONFIG_LIBCURL_COOKIES=y
+CONFIG_LIBCURL_CRYPTO_AUTH=y
+CONFIG_LIBCURL_FILE=y
+CONFIG_LIBCURL_FTP=y
+CONFIG_LIBCURL_HTTP=y
+CONFIG_LIBCURL_NGHTTP2=y
+CONFIG_LIBCURL_OPENSSL=y
+CONFIG_LIBCURL_PROXY=y
+CONFIG_LIBCURL_TFTP=y
+CONFIG_LIBCURL_THREADED_RESOLVER=y
+CONFIG_LIBCURL_TLS_SRP=y
+CONFIG_LIBCURL_UNIX_SOCKETS=y
+CONFIG_LUCI_LANG_zh_Hans=y
+CONFIG_PACKAGE_autocore=y
+CONFIG_PACKAGE_cgi-io=y
+CONFIG_PACKAGE_chinadns-ng=y
+CONFIG_PACKAGE_coreutils=y
+CONFIG_PACKAGE_coreutils-base64=y
+CONFIG_PACKAGE_coreutils-nohup=y
+CONFIG_PACKAGE_curl=y
+CONFIG_PACKAGE_dns2socks=y
+CONFIG_PACKAGE_hysteria=y
+CONFIG_PACKAGE_ip-full=y
+CONFIG_PACKAGE_ipset=y
+CONFIG_PACKAGE_ipt2socks=y
+CONFIG_PACKAGE_kmod-ipt-core=y
+CONFIG_PACKAGE_kmod-ipt-ipset=y
+CONFIG_PACKAGE_kmod-nf-ipt=y
+CONFIG_PACKAGE_kmod-nf-socket=y
+CONFIG_PACKAGE_kmod-nf-tproxy=y
+CONFIG_PACKAGE_kmod-nft-socket=y
+CONFIG_PACKAGE_kmod-nft-tproxy=y
+CONFIG_PACKAGE_libbpf=y
+CONFIG_PACKAGE_libcap=y
+CONFIG_PACKAGE_libcurl=y
+CONFIG_PACKAGE_libelf=y
+CONFIG_PACKAGE_libipset=y
+CONFIG_PACKAGE_liblua=y
+CONFIG_PACKAGE_liblucihttp=y
+CONFIG_PACKAGE_liblucihttp-lua=y
+CONFIG_PACKAGE_liblucihttp-ucode=y
+CONFIG_PACKAGE_libnghttp2=y
+CONFIG_PACKAGE_librt=y
+CONFIG_PACKAGE_libubus-lua=y
+CONFIG_PACKAGE_libuci-lua=y
+CONFIG_PACKAGE_libuv=y
+CONFIG_PACKAGE_libwebsockets-full=y
+CONFIG_PACKAGE_lua=y
+CONFIG_PACKAGE_luci=y
+CONFIG_PACKAGE_luci-app-firewall=y
+CONFIG_PACKAGE_luci-app-package-manager=y
+CONFIG_PACKAGE_luci-app-passwall=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Hysteria=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks_Rust_Client=y
+CONFIG_PACKAGE_luci-app-passwall_INCLUDE_V2ray_Plugin=y
+CONFIG_PACKAGE_luci-app-passwall_Nftables_Transparent_Proxy=y
+# CONFIG_PACKAGE_luci-app-rclone_INCLUDE_rclone-ng is not set
+# CONFIG_PACKAGE_luci-app-rclone_INCLUDE_rclone-webui is not set
+CONFIG_PACKAGE_luci-app-ttyd=y
+CONFIG_PACKAGE_luci-base=y
+CONFIG_PACKAGE_luci-compat=y
+CONFIG_PACKAGE_luci-i18n-base-zh-cn=y
+CONFIG_PACKAGE_luci-i18n-firewall-zh-cn=y
+CONFIG_PACKAGE_luci-i18n-package-manager-zh-cn=y
+CONFIG_PACKAGE_luci-i18n-passwall-zh-cn=y
+CONFIG_PACKAGE_luci-i18n-ttyd-zh-cn=y
+CONFIG_PACKAGE_luci-lib-base=y
+CONFIG_PACKAGE_luci-lib-ip=y
+CONFIG_PACKAGE_luci-lib-jsonc=y
+CONFIG_PACKAGE_luci-lib-nixio=y
+CONFIG_PACKAGE_luci-light=y
+CONFIG_PACKAGE_luci-lua-runtime=y
+CONFIG_PACKAGE_luci-mod-admin-full=y
+CONFIG_PACKAGE_luci-mod-network=y
+CONFIG_PACKAGE_luci-mod-status=y
+CONFIG_PACKAGE_luci-mod-system=y
+CONFIG_PACKAGE_luci-proto-ipv6=y
+CONFIG_PACKAGE_luci-proto-ppp=y
+CONFIG_PACKAGE_luci-ssl-openssl=y
+CONFIG_PACKAGE_luci-theme-argon=y
+CONFIG_PACKAGE_luci-theme-bootstrap=y
+CONFIG_PACKAGE_microsocks=y
+CONFIG_PACKAGE_openssl-util=y
+CONFIG_PACKAGE_resolveip=y
+CONFIG_PACKAGE_rpcd=y
+CONFIG_PACKAGE_rpcd-mod-file=y
+CONFIG_PACKAGE_rpcd-mod-iwinfo=y
+CONFIG_PACKAGE_rpcd-mod-luci=y
+CONFIG_PACKAGE_rpcd-mod-rrdns=y
+CONFIG_PACKAGE_rpcd-mod-ucode=y
+CONFIG_PACKAGE_shadowsocks-rust-sslocal=y
+CONFIG_PACKAGE_tcping=y
+CONFIG_PACKAGE_ttyd=y
+CONFIG_PACKAGE_ucode-mod-html=y
+CONFIG_PACKAGE_ucode-mod-lua=y
+CONFIG_PACKAGE_ucode-mod-math=y
+CONFIG_PACKAGE_uhttpd=y
+CONFIG_PACKAGE_uhttpd-mod-ubus=y
+CONFIG_PACKAGE_v2ray-plugin=y
+# CONFIG_PACKAGE_boost is not set
+# CONFIG_PACKAGE_geoview is not set
+# CONFIG_PACKAGE_haproxy is not set
+# CONFIG_PACKAGE_kmod-inet-diag is not set
+# CONFIG_PACKAGE_kmod-netlink-diag is not set
+# CONFIG_PACKAGE_kmod-tun is not set
+# CONFIG_PACKAGE_libatomic is not set
+# CONFIG_PACKAGE_libev is not set
+# CONFIG_PACKAGE_libltdl is not set
+# CONFIG_PACKAGE_liblua5.4 is not set
+# CONFIG_PACKAGE_libncurses is not set
+# CONFIG_PACKAGE_libpcre2 is not set
+# CONFIG_PACKAGE_libreadline is not set
+# CONFIG_PACKAGE_libsodium is not set
+# CONFIG_PACKAGE_libstdcpp is not set
+# CONFIG_PACKAGE_libudns is not set
+# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Haproxy is not set
+# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_ShadowsocksR_Libev_Client is not set
+# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks_Libev_Client is not set
+# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Shadowsocks_Libev_Server is not set
+# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Simple_Obfs is not set
+# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_SingBox is not set
+# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Trojan_Plus is not set
+# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_V2ray_Geoview is not set
+# CONFIG_PACKAGE_luci-app-passwall_INCLUDE_Xray is not set
+# CONFIG_PACKAGE_shadowsocksr-libev-ssr-local is not set
+# CONFIG_PACKAGE_shadowsocksr-libev-ssr-redir is not set
+# CONFIG_PACKAGE_simple-obfs is not set
+# CONFIG_PACKAGE_sing-box is not set
+# CONFIG_PACKAGE_terminfo is not set
+# CONFIG_PACKAGE_trojan-plus is not set
+# CONFIG_PACKAGE_unzip is not set
+# CONFIG_PACKAGE_xray-core is not set
+EOF
